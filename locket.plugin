@@ -1,12 +1,9 @@
-#!name=Locket Gold iutdyy (Full)
-#!desc=Mở khóa Locket Gold + Fake Subscription
+#!name=Locket Gold iutdyy
+#!desc=Mở khóa Locket Gold
 
 [Script]
-# 1. File Remote Config (Mở khoá tính năng)
 http-response ^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/.* script-path=https://raw.githubusercontent.com/thienkhaiagency-code/locketgold/main/locket.js, requires-body=true, max-size=0
-
-# 2. File RevenueCat (Giả lập đã mua Gold)
-http-response ^https:\/\/api\.revenuecat\.com\/v1\/subscribers\/.* script-path=https://raw.githubusercontent.com/thienkhaiagency-code/locketgold/main/revenue.js, requires-body=true, max-size=0
+http-response ^https:\/\/api\.revenuecat\.com\/v1\/subscribers\/.* script-path=https://raw.githubusercontent.com/thienkhaiagency-code/locketgold/main/locket.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = firebaseremoteconfig.googleapis.com, api.revenuecat.com
