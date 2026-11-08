@@ -225,7 +225,7 @@ const OVERLAY = {
   ]),
 };
 
-// ---------- overlay items ----------
+// ---------- overlay items (caption cá nhân hoá của iutdyy) ----------
 const OVERLAY_ITEMS = [
   {
     section: "🎨 iutdyy",
@@ -501,7 +501,7 @@ if (!TARGET_UA.test($request.headers["User-Agent"] || $request.headers["user-age
     setStr(e, "android_subscribe_gold_button_enabled", "false");
     setStr(e, "lunar_new_year_app_icon_enabled", "true");
 
-    // Overlay items
+    // Overlay items (đã gồm section iutdyy + caption mốc thành viên)
     e.overlay_items = JSON.stringify(OVERLAY_ITEMS);
 
     // Widget frame
@@ -514,20 +514,20 @@ if (!TARGET_UA.test($request.headers["User-Agent"] || $request.headers["user-age
       end_at: "2099-12-31T23:59:59",
     });
 
-    // Welcome popup — QR mới của mày
+    // Welcome popup — luôn hiện, giữ mốc thành viên
     setJsonString(e, "feature_discovery_popup_config", {
-      tag: "LOCKET GOLD",
+      tag: "iutdyy",
       tag_gradient: true,
       tag_style: "gold_gradient",
-      title: "chúc mừng bạn",
+      title: "Locket Gold đã mở 🔓",
       feature_set: [
         {
-          title: "iutdyy hêh",
-          body: "Mời mọi người tham gia cộng đồng bằng mã QR hoặc link dưới đây:",
-          imageURL: "https://cdn.phototourl.com/member/2026-10-17-2489ff2c-1a3c-4532-a7ec-70801080627d.png", 
+          title: `iutdyy Edition — từ ${MEMBER_SINCE}`,
+          body: `Thành viên tham gia kể từ ${MEMBER_SINCE}. Mở khoá toàn bộ tính năng. Không quảng cáo. Không tracking.`,
+          imageURL: "https://i.ibb.co/gZ6HkyWT/L-n-Gold-R-i.png",
         }
       ],
-      primary_button_title: "done",
+      primary_button_title: "Xong",
       campaign: "iutdyy_unlock_v1",
       start_at: "2020-01-01T00:00:00",
       end_at: "2099-12-31T23:59:59",
